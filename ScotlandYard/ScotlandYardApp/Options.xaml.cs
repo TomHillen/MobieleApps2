@@ -10,33 +10,36 @@ using Microsoft.Phone.Shell;
 
 namespace ScotlandYardApp
 {
+    
     public partial class Page1 : PhoneApplicationPage
     {
-        private TimeSpan interval = TimeSpan.FromMinutes(15);
+        
+        App thisApp = App.Current as App;
         public Page1()
         {
             InitializeComponent();
-            
+            txtBoxIntervalInMinutes.Text = Convert.ToString(thisApp.Interval);
+            slider1.Value = thisApp.Interval.TotalMinutes;
+            slider1.ValueChanged += Slider_ValueChanged;
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Slider.Value();
-           interval = TimeSpan.FromMinutes(Convert.ToDouble(15));
+            var slider = sender as Slider;
+            thisApp.Interval = TimeSpan.FromMinutes(slider.Value);
+            txtBoxIntervalInMinutes.Text = Convert.ToString(thisApp.Interval);
         }
 
-        private void OnNavigatedFrom(NavigationEventArgs e)
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            App thisApp = App.Current as App;
-            thisApp.Interval = interval;
+            //thisApp.Interval = interval;
 
             base.OnNavigatedFrom(e);
         }
 
-        private void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            App thisApp = App.Current as App;
-            interval = thisApp.Interval;
+            //interval = thisApp.Interval;
 
 
 

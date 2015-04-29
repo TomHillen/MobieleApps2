@@ -1,1 +1,1 @@
-E:\Documenten\School\school\MobieleApps\project\ScotlandYard\ScotlandYardApp\ScotlandYardApp.csproj;neutral
+E:\Documenten\School\school\MobieleApps\project\projectMobiel\trunk\ScotlandYard\ScotlandYardApp\ScotlandYardApp.csproj;neutral

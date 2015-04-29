@@ -19,6 +19,7 @@ namespace ScotlandYardApp
     public partial class App : Application
     {
         public TimeSpan Interval;
+        
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>

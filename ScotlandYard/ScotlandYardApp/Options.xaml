@@ -30,7 +30,9 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
                 <TextBlock TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.OptionsPageInterval, Source={StaticResource LocalizedStrings}}" />
-                <Slider Value="15" Maximum="30" Minimum="1" ValueChanged="Slider_ValueChanged"/>
+                <Slider Name="slider1" Value="15" Maximum="30" Minimum="1"/>
+                <TextBlock Name="txtIntervalInMinutes" TextWrapping="Wrap" Text="interval in Minutes"/>
+                <TextBox Name="txtBoxIntervalInMinutes" Height="72" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
     </Grid>
